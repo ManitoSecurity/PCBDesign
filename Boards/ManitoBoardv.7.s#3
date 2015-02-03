@@ -28,8 +28,8 @@
 <layer number="18" name="Vias" color="2" fill="1" visible="no" active="no"/>
 <layer number="19" name="Unrouted" color="6" fill="1" visible="no" active="no"/>
 <layer number="20" name="Dimension" color="15" fill="1" visible="no" active="no"/>
-<layer number="21" name="tPlace" color="7" fill="1" visible="no" active="no"/>
-<layer number="22" name="bPlace" color="7" fill="1" visible="no" active="no"/>
+<layer number="21" name="tPlace" color="15" fill="1" visible="no" active="no"/>
+<layer number="22" name="bPlace" color="14" fill="1" visible="no" active="no"/>
 <layer number="23" name="tOrigins" color="15" fill="1" visible="no" active="no"/>
 <layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="no"/>
 <layer number="25" name="tNames" color="7" fill="1" visible="no" active="no"/>
@@ -58,7 +58,7 @@
 <layer number="48" name="Document" color="7" fill="1" visible="no" active="no"/>
 <layer number="49" name="Reference" color="7" fill="1" visible="no" active="no"/>
 <layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
-<layer number="51" name="tDocu" color="7" fill="1" visible="no" active="no"/>
+<layer number="51" name="tDocu" color="6" fill="1" visible="no" active="no"/>
 <layer number="52" name="bDocu" color="7" fill="1" visible="no" active="no"/>
 <layer number="53" name="tGND_GNDA" color="7" fill="9" visible="no" active="no"/>
 <layer number="54" name="bGND_GNDA" color="1" fill="9" visible="no" active="no"/>
@@ -3694,7 +3694,9 @@ These are standard reverse protection diodes and small signal diodes. SMA packag
 <part name="NEUTRAL" library="CharlieCreations" deviceset="M01" device="SMDNS"/>
 <part name="LINE" library="CharlieCreations" deviceset="M01" device="SMDNS"/>
 <part name="U$2" library="CharlieCreations" deviceset="0313.500MXP" device="1"/>
+<part name="R13" library="CharlieCreations" deviceset="0603RESISTOR" device="1" value="10"/>
 <part name="U$3" library="CharlieCreations" deviceset="MOV" device="1"/>
+<part name="C6" library="CharlieCreations" deviceset="SMDCAP" device="1" value="100u"/>
 <part name="C7" library="CharlieCreations" deviceset="CAP" device="0603-CAP" value="100n"/>
 <part name="D1" library="CharlieCreations" deviceset="DIODE" device="1N4148"/>
 <part name="Q3" library="CharlieCreations" deviceset="MOSFET-N" device="REFLOW"/>
@@ -3702,6 +3704,7 @@ These are standard reverse protection diodes and small signal diodes. SMA packag
 <part name="Q5" library="CharlieCreations" deviceset="MOSFET-N" device="REFLOW"/>
 <part name="GND11" library="supply1" deviceset="GND" device=""/>
 <part name="P+10" library="supply1" deviceset="+5V" device=""/>
+<part name="C8" library="CharlieCreations" deviceset="CAP" device="0603-CAP" value="100u"/>
 <part name="U$5" library="CharlieCreations" deviceset="LEDTRICOLOR" device=""/>
 <part name="GND12" library="supply1" deviceset="GND" device=""/>
 <part name="FRAME1" library="frames" deviceset="TABL_P" device=""/>
@@ -3724,9 +3727,6 @@ These are standard reverse protection diodes and small signal diodes. SMA packag
 <part name="R18" library="CharlieCreations" deviceset="0603RESISTOR" device="1" value="330"/>
 <part name="R19" library="CharlieCreations" deviceset="0603RESISTOR" device="1" value="10k"/>
 <part name="R20" library="CharlieCreations" deviceset="0603RESISTOR" device="1" value="330"/>
-<part name="C9" library="CharlieCreations" deviceset="CAP" device="0603-CAP" value="4.7u"/>
-<part name="R1" library="SparkFun-Passives" deviceset="RESISTOR" device="PTH-1W" value="15"/>
-<part name="C10" library="CharlieCreations" deviceset="SMDCAP" device="1" value="100u"/>
 </parts>
 <sheets>
 <sheet>
@@ -3795,7 +3795,9 @@ current to LEDs, probably
 <instance part="NEUTRAL" gate="G$1" x="190.5" y="355.6"/>
 <instance part="LINE" gate="G$1" x="152.4" y="381"/>
 <instance part="U$2" gate="G$1" x="175.26" y="381"/>
+<instance part="R13" gate="A" x="193.04" y="381"/>
 <instance part="U$3" gate="G$1" x="208.28" y="368.3" rot="R90"/>
+<instance part="C6" gate="G$1" x="246.38" y="378.46" rot="R180"/>
 <instance part="C7" gate="G$1" x="254" y="378.46"/>
 <instance part="D1" gate="G$1" x="104.14" y="177.8" rot="R90"/>
 <instance part="Q3" gate="G$1" x="182.88" y="215.9"/>
@@ -3805,6 +3807,7 @@ current to LEDs, probably
 <instance part="P+10" gate="1" x="205.74" y="264.16" smashed="yes">
 <attribute name="VALUE" x="207.645" y="266.7" size="1.778" layer="96" rot="R180"/>
 </instance>
+<instance part="C8" gate="G$1" x="241.3" y="226.06"/>
 <instance part="U$5" gate="G$1" x="205.74" y="243.84"/>
 <instance part="U$5" gate="G$2" x="185.42" y="243.84"/>
 <instance part="U$5" gate="G$3" x="226.06" y="243.84"/>
@@ -3834,9 +3837,6 @@ current to LEDs, probably
 <instance part="R18" gate="A" x="137.16" y="30.48" rot="R270"/>
 <instance part="R19" gate="A" x="147.32" y="35.56" rot="R270"/>
 <instance part="R20" gate="A" x="154.94" y="30.48" rot="R270"/>
-<instance part="C9" gate="G$1" x="254" y="330.2"/>
-<instance part="R1" gate="G$1" x="198.12" y="381" rot="R180"/>
-<instance part="C10" gate="G$1" x="241.3" y="228.6"/>
 </instances>
 <busses>
 </busses>
@@ -3858,12 +3858,9 @@ current to LEDs, probably
 </segment>
 <segment>
 <pinref part="U$6" gate="G$1" pin="3V3-OUT"/>
-<wire x1="246.38" y1="335.28" x2="254" y2="335.28" width="0.1524" layer="91"/>
+<wire x1="246.38" y1="335.28" x2="259.08" y2="335.28" width="0.1524" layer="91"/>
 <pinref part="P+6" gate="1" pin="VCC"/>
-<wire x1="254" y1="335.28" x2="259.08" y2="335.28" width="0.1524" layer="91"/>
 <wire x1="259.08" y1="335.28" x2="259.08" y2="337.82" width="0.1524" layer="91"/>
-<pinref part="C9" gate="G$1" pin="1"/>
-<junction x="254" y="335.28"/>
 </segment>
 <segment>
 <pinref part="JP1" gate="G$1" pin="3"/>
@@ -3974,19 +3971,23 @@ current to LEDs, probably
 <pinref part="Q5" gate="G$1" pin="S"/>
 <wire x1="226.06" y1="205.74" x2="226.06" y2="210.82" width="0.1524" layer="91"/>
 <pinref part="GND11" gate="1" pin="GND"/>
+<pinref part="C8" gate="G$1" pin="2"/>
 <wire x1="241.3" y1="223.52" x2="241.3" y2="205.74" width="0.1524" layer="91"/>
 <wire x1="241.3" y1="205.74" x2="226.06" y2="205.74" width="0.1524" layer="91"/>
 <pinref part="Q3" gate="G$1" pin="S"/>
 <wire x1="185.42" y1="210.82" x2="185.42" y2="205.74" width="0.1524" layer="91"/>
-<pinref part="C10" gate="G$1" pin="NEG"/>
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="GND"/>
 <wire x1="233.68" y1="378.46" x2="238.76" y2="378.46" width="0.1524" layer="91"/>
 <wire x1="238.76" y1="378.46" x2="238.76" y2="386.08" width="0.1524" layer="91"/>
+<wire x1="238.76" y1="386.08" x2="246.38" y2="386.08" width="0.1524" layer="91"/>
 <pinref part="C7" gate="G$1" pin="1"/>
-<wire x1="238.76" y1="386.08" x2="254" y2="386.08" width="0.1524" layer="91"/>
+<wire x1="246.38" y1="386.08" x2="254" y2="386.08" width="0.1524" layer="91"/>
 <wire x1="254" y1="386.08" x2="254" y2="383.54" width="0.1524" layer="91"/>
+<pinref part="C6" gate="G$1" pin="NEG"/>
+<wire x1="246.38" y1="386.08" x2="246.38" y2="383.54" width="0.1524" layer="91"/>
+<junction x="246.38" y="386.08"/>
 <pinref part="GND12" gate="1" pin="GND"/>
 <wire x1="254" y1="386.08" x2="264.16" y2="386.08" width="0.1524" layer="91"/>
 <wire x1="264.16" y1="386.08" x2="264.16" y2="383.54" width="0.1524" layer="91"/>
@@ -4000,11 +4001,8 @@ current to LEDs, probably
 </segment>
 <segment>
 <pinref part="U$6" gate="G$1" pin="GND"/>
-<wire x1="246.38" y1="327.66" x2="254" y2="327.66" width="0.1524" layer="91"/>
+<wire x1="246.38" y1="327.66" x2="259.08" y2="327.66" width="0.1524" layer="91"/>
 <pinref part="GND5" gate="1" pin="GND"/>
-<pinref part="C9" gate="G$1" pin="2"/>
-<wire x1="254" y1="327.66" x2="259.08" y2="327.66" width="0.1524" layer="91"/>
-<junction x="254" y="327.66"/>
 </segment>
 <segment>
 <pinref part="SV1" gate="A" pin="2"/>
@@ -4059,11 +4057,15 @@ current to LEDs, probably
 <segment>
 <pinref part="U$1" gate="G$1" pin="5V"/>
 <label x="259.08" y="373.38" size="1.778" layer="95"/>
-<wire x1="233.68" y1="373.38" x2="254" y2="373.38" width="0.1524" layer="91"/>
+<wire x1="233.68" y1="373.38" x2="246.38" y2="373.38" width="0.1524" layer="91"/>
 <pinref part="C7" gate="G$1" pin="2"/>
+<wire x1="246.38" y1="373.38" x2="254" y2="373.38" width="0.1524" layer="91"/>
 <wire x1="254" y1="373.38" x2="254" y2="375.92" width="0.1524" layer="91"/>
 <wire x1="254" y1="373.38" x2="259.08" y2="373.38" width="0.1524" layer="91"/>
 <junction x="254" y="373.38"/>
+<pinref part="C6" gate="G$1" pin="POS"/>
+<wire x1="246.38" y1="375.92" x2="246.38" y2="373.38" width="0.1524" layer="91"/>
+<junction x="246.38" y="373.38"/>
 </segment>
 <segment>
 <pinref part="P+10" gate="1" pin="+5V"/>
@@ -4079,13 +4081,13 @@ current to LEDs, probably
 <wire x1="185.42" y1="259.08" x2="185.42" y2="246.38" width="0.1524" layer="91"/>
 <wire x1="226.06" y1="259.08" x2="241.3" y2="259.08" width="0.1524" layer="91"/>
 <junction x="226.06" y="259.08"/>
+<pinref part="C8" gate="G$1" pin="1"/>
 <wire x1="241.3" y1="259.08" x2="241.3" y2="231.14" width="0.1524" layer="91"/>
-<pinref part="C10" gate="G$1" pin="POS"/>
 </segment>
 <segment>
 <pinref part="U$6" gate="G$1" pin="INPUT"/>
-<wire x1="246.38" y1="320.04" x2="259.08" y2="320.04" width="0.1524" layer="91"/>
-<label x="259.08" y="317.5" size="1.778" layer="95"/>
+<wire x1="246.38" y1="320.04" x2="254" y2="320.04" width="0.1524" layer="91"/>
+<label x="251.46" y="317.5" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="JP1" gate="G$1" pin="2"/>
@@ -4422,12 +4424,12 @@ current to LEDs, probably
 <segment>
 <wire x1="213.36" y1="381" x2="213.36" y2="375.92" width="0.1524" layer="91"/>
 <pinref part="U$1" gate="G$1" pin="L"/>
+<pinref part="R13" gate="A" pin="1"/>
+<wire x1="205.74" y1="381" x2="208.28" y2="381" width="0.1524" layer="91"/>
 <pinref part="U$3" gate="G$1" pin="-"/>
 <wire x1="208.28" y1="381" x2="213.36" y2="381" width="0.1524" layer="91"/>
 <wire x1="208.28" y1="381" x2="208.28" y2="378.46" width="0.1524" layer="91"/>
 <junction x="208.28" y="381"/>
-<pinref part="R1" gate="G$1" pin="1"/>
-<wire x1="203.2" y1="381" x2="208.28" y2="381" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$23" class="0">
@@ -4452,8 +4454,8 @@ current to LEDs, probably
 <net name="N$25" class="0">
 <segment>
 <pinref part="U$2" gate="G$1" pin="P$2"/>
+<pinref part="R13" gate="A" pin="2"/>
 <wire x1="185.42" y1="381" x2="193.04" y2="381" width="0.1524" layer="91"/>
-<pinref part="R1" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$29" class="0">
@@ -4575,7 +4577,7 @@ current to LEDs, probably
 <label x="60.96" y="40.64" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="N$2" class="2">
+<net name="N$2" class="0">
 <segment>
 <wire x1="142.24" y1="312.42" x2="0" y2="312.42" width="0.1524" layer="91"/>
 </segment>
